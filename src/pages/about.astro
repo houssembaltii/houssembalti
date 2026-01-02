@@ -1,0 +1,31 @@
+---
+import Header from "@/components/Header.astro";
+import SEO from "@/components/SEO.astro";
+import Layout from "@/layouts/Layout.astro";
+
+
+---
+
+<Layout>
+  <SEO slot="seo" title="About | Houssem Balti" />
+  <Header />
+  <main class="flex-1 flex flex-col container mx-auto max-w-xl px-6 py-12">
+    <section class="space-y-8">
+      <h1 class="text-3xl font-bold tracking-tight text-foreground">About Me</h1>
+      <div class="space-y-6 text-muted-foreground text-lg leading-relaxed">
+        <p>
+          I'm a full-stack developer working at <strong>CamelStudio</strong>, where I build and maintain real-world web applications for clients. I work with TypeScript across the stack and care a lot about writing clean, readable code that stays reliable in production.
+        </p>
+        <p>
+          I graduated from <strong>ESPRIT University</strong> and enjoy working end to end—from crafting good user experiences on the front end to thinking through backend logic, performance, and overall system behavior.
+        </p>
+        <p>
+          Outside of work, I'm an organizer at <strong>Fork It Community</strong>, where I help run meetups and developer events and contribute to building a strong developer community.
+        </p>
+        <p>
+          When I'm not coding, I'm usually exploring new tools, testing ideas, or unwinding in gaming worlds.
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

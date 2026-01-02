@@ -1,0 +1,36 @@
+---
+import { SEO as AstroSEO } from 'astro-seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title="Houssem Balti | Full-stack Developer",
+  description = "Full-stack Developer at CamelStudio. Crafting clean, reliable, and performance-driven web applications.",
+  image = new URL("/og-image.png",Astro.site).toString()
+} = Astro.props;
+
+---
+
+<AstroSEO
+  title={title}
+  description={description}
+  openGraph={{
+    basic: {
+      title: title,
+      type: "website",
+      image: image,
+      url: Astro.url
+    }
+  }}
+ twitter={{
+    card: "summary_large_image",
+    title: title ?? "",
+    description: description ?? "",
+    image: image,
+    imageAlt: image,
+  }}
+/>
