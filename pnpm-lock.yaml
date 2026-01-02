@@ -68,10 +68,6 @@ importers:
       tailwindcss:
         specifier: 4.1.18
         version: 4.1.18
-    devDependencies:
-      '@types/node':
-        specifier: 25.0.3
-        version: 25.0.3
 
 packages:
 
