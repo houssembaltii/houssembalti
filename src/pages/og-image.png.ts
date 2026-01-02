@@ -2,6 +2,8 @@ import fs from "fs/promises";
 import satori from "satori";
 import sharp from "sharp";
 
+export const prerender = true;
+
 export const GET = async () => {
   const fontRegular = await fs.readFile("./public/fonts/Inter-Regular.woff");
   const fontBold = await fs.readFile("./public/fonts/Inter-Bold.woff");
