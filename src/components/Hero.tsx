@@ -44,7 +44,7 @@ export const Hero = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <a
-          href="https://github.com"
+          href="https://github.com/houssembaltii"
           target="_blank"
           rel="noreferrer"
           className="text-muted-foreground hover:text-foreground transition-colors"
@@ -53,7 +53,7 @@ export const Hero = () => {
           <span className="sr-only">GitHub</span>
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://linkedin.com/in/houssem-balti/"
           target="_blank"
           rel="noreferrer"
           className="text-muted-foreground hover:text-foreground transition-colors"
@@ -62,7 +62,7 @@ export const Hero = () => {
           <span className="sr-only">LinkedIn</span>
         </a>
         <a
-          href="https://instagram.com"
+          href="https://instagram.com/houssem__balti/"
           target="_blank"
           rel="noreferrer"
           className="text-muted-foreground hover:text-foreground transition-colors"
