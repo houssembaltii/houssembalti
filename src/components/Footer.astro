@@ -1,0 +1,25 @@
+---
+import { SITE, SOCIALS } from "@/lib/constants";
+---
+
+<footer class="w-full py-8 md:py-12 mt-4 md:mt-12 border-t border-border/20 md:border-border/30">
+  <div class="flex flex-col items-center gap-6 px-6 max-w-lg md:max-w-7xl mx-auto md:flex-row md:justify-between md:px-12">
+    <div class="flex gap-8 md:gap-10 md:order-2">
+      {
+        SOCIALS.map((s) => (
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-muted-foreground active:text-primary md:hover:text-primary transition-colors text-[9px] md:text-[10px] font-bold md:font-normal uppercase tracking-widest md:hover:underline md:decoration-primary/40 md:underline-offset-4"
+          >
+            {s.label}
+          </a>
+        ))
+      }
+    </div>
+    <p class="text-muted-foreground/60 md:text-muted-foreground text-[9px] md:text-[10px] font-medium md:font-normal uppercase tracking-widest text-center md:order-1">
+      &copy; {new Date().getFullYear()} {SITE.name}.
+    </p>
+  </div>
+</footer>

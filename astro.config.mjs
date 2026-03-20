@@ -11,7 +11,6 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://houssembalti.dev",
-  output: "server",
   adapter: netlify(),
   integrations: [react(), sitemap(), robotsTxt()],
 

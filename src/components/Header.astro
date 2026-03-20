@@ -1,15 +1,44 @@
 ---
+import { SITE, NAV_LINKS } from "@/lib/constants";
+
+const pathname = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-  <div class="container mx-auto flex h-20 max-w-xl items-center justify-between px-6">
-    <div class="flex items-center">
-      <a class="flex items-center space-x-2 font-bold text-lg tracking-tight" href="/">
-        Houssem Balti
-      </a>
+<header class="glass-nav fixed top-0 w-full z-50">
+  <nav class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+    <a href="/" class="text-xl font-bold text-foreground tracking-tighter">
+      {SITE.name}
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      {
+        NAV_LINKS.map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                "text-sm font-medium tracking-tighter transition-colors",
+                isActive
+                  ? "text-foreground border-b-2 border-muted-foreground pb-0.5"
+                  : "text-muted-foreground hover:text-foreground",
+              ]}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
     </div>
-    <nav class="flex items-center gap-6 text-sm font-medium">
-      <a class="transition-colors hover:text-foreground/80 text-foreground/60" href="/about">About</a>
-    </nav>
-  </div>
+
+    <a
+      href={`mailto:${SITE.email}`}
+      aria-label="Send email"
+      class="text-foreground hover:text-primary transition-colors"
+    >
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    </a>
+  </nav>
 </header>
