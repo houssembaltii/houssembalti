@@ -1,5 +1,6 @@
 ---
 import { SEO as AstroSEO } from 'astro-seo';
+import { SITE } from '@/lib/constants';
 
 interface Props {
   title?: string;
@@ -8,9 +9,9 @@ interface Props {
 }
 
 const {
-  title="Houssem Balti | Full-stack Developer",
-  description = "Full-stack Developer at CamelStudio. Crafting clean, reliable, and performance-driven web applications.",
-  image = new URL("/og-image.png",Astro.site).toString()
+  title = `${SITE.name} | ${SITE.title}`,
+  description = SITE.description,
+  image = new URL("/og-image.png", Astro.site).toString()
 } = Astro.props;
 
 ---
@@ -31,6 +32,6 @@ const {
     title: title ?? "",
     description: description ?? "",
     image: image,
-    imageAlt: image,
+    imageAlt: `${SITE.name} - ${SITE.title}`,
   }}
 />
