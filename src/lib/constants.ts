@@ -3,7 +3,7 @@ export const SITE = {
   title: "Full Stack Developer",
   description:
     "Full Stack Developer at CamelStudio. Crafting clean, reliable, and performance-driven web applications.",
-  tagline: "Crafting digital experiences through technical precision.",
+  tagline: "Professional bug fixer, passionate gamer, and the only employee at a company run entirely by two cats.",
   url: "https://houssembalti.dev",
   email: "houssem@example.com",
 } as const;
