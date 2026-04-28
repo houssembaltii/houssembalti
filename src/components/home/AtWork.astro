@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import { EXPERIENCES } from "@/lib/constants";
+import SectionLabel from "./SectionLabel.astro";
+
+interface Props {
+  delay?: number;
+}
+const { delay = 0 } = Astro.props;
+---
+
+<section
+  class="motion-safe:animate-rise mt-14"
+  style={`animation-delay: ${delay}ms;`}
+  aria-labelledby="work-label"
+>
+  <SectionLabel id="work-label">at work</SectionLabel>
+  <ul class="space-y-4">
+    {EXPERIENCES.map((e) => (
+      <li>
+        <a
+          href={e.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid grid-cols-[36px_1fr_auto] items-center gap-3 no-underline group focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4 focus-visible:rounded-md"
+        >
+          <div class="w-9 h-9 rounded-lg bg-secondary border border-border overflow-hidden shrink-0">
+            <Image
+              src={e.logo}
+              alt={e.logoAlt}
+              width={36}
+              height={36}
+              densities={[1, 2]}
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="min-w-0">
+            <h3 class="text-sm md:text-base font-bold text-foreground group-hover:text-primary group-active:text-primary transition-colors duration-300 ease-out leading-tight">
+              {e.role}
+            </h3>
+            <p class="text-xs md:text-sm text-muted-foreground mt-0.5">{e.org}</p>
+          </div>
+          <span class="text-[10px] uppercase tracking-[0.1em] text-muted-foreground/70 tabular-nums font-medium whitespace-nowrap">
+            {e.period}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

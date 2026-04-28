@@ -1,0 +1,15 @@
+---
+import { SITE } from "@/lib/constants";
+
+interface Props {
+  delay?: number;
+}
+const { delay = 0 } = Astro.props;
+---
+
+<p
+  class="motion-safe:animate-rise mt-12 text-base md:text-lg text-foreground/95 leading-relaxed text-pretty"
+  style={`animation-delay: ${delay}ms;`}
+>
+  {SITE.tagline}
+</p>
