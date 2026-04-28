@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Local impeccable design context (kept locally, not committed)
+PRODUCT.md
+DESIGN.md
+DESIGN.json

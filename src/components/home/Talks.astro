@@ -1,0 +1,50 @@
+---
+import { TALKS } from "@/lib/constants";
+import SectionLabel from "./SectionLabel.astro";
+
+interface Props {
+  delay?: number;
+}
+const { delay = 0 } = Astro.props;
+---
+
+<section
+  class="motion-safe:animate-rise mt-12"
+  style={`animation-delay: ${delay}ms;`}
+  aria-labelledby="talks-label"
+>
+  <SectionLabel id="talks-label">talks</SectionLabel>
+  <ul class="space-y-4">
+    {TALKS.map((t) => (
+      <li>
+        {t.href ? (
+          <a
+            href={t.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block group focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4 focus-visible:rounded-md"
+          >
+            <h3 class="text-sm md:text-base font-bold text-foreground group-hover:text-primary group-active:text-primary transition-colors duration-300 ease-out leading-tight">
+              "{t.title}"
+            </h3>
+            <p class="text-xs md:text-sm text-muted-foreground mt-1">
+              {t.event.replace(" Event", "")}, {t.location}, {t.date}.
+            </p>
+          </a>
+        ) : (
+          <>
+            <h3 class="text-sm md:text-base font-bold text-foreground leading-tight">
+              "{t.title}"
+            </h3>
+            <p class="text-xs md:text-sm text-muted-foreground mt-1">
+              {t.event.replace(" Event", "")}, {t.location}, {t.date}.
+            </p>
+          </>
+        )}
+      </li>
+    ))}
+  </ul>
+  <p class="text-[13px] italic text-muted-foreground/80 leading-normal mt-3">
+    Open to more invitations.
+  </p>
+</section>

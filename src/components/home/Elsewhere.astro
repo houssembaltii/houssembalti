@@ -1,0 +1,36 @@
+---
+import { SOCIALS } from "@/lib/constants";
+import { SOCIAL_ICON_PATHS } from "@/lib/social-icons";
+import SectionLabel from "./SectionLabel.astro";
+
+interface Props {
+  delay?: number;
+}
+const { delay = 0 } = Astro.props;
+---
+
+<section
+  class="motion-safe:animate-rise mt-12"
+  style={`animation-delay: ${delay}ms;`}
+  aria-labelledby="elsewhere-label"
+>
+  <SectionLabel id="elsewhere-label">elsewhere</SectionLabel>
+  <ul class="flex flex-wrap gap-2">
+    {SOCIALS.map((s) => (
+      <li>
+        <a
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${s.label} (opens in new tab)`}
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-secondary border border-border rounded-full text-[13px] font-medium text-foreground no-underline transition-[border-color,color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-primary/40 hover:text-primary active:border-primary/40 active:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+        >
+          <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-current" aria-hidden="true">
+            <path d={SOCIAL_ICON_PATHS[s.label]}></path>
+          </svg>
+          <span>{s.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,23 +1,23 @@
 ---
-import { SITE } from "@/lib/constants";
-import SEO from "@/components/SEO.astro";
 import Layout from "@/layouts/Layout.astro";
-import IdentityCard from "@/components/bento/IdentityCard.astro";
-import SocialsCard from "@/components/bento/SocialsCard.astro";
-import ExperienceCard from "@/components/bento/ExperienceCard.astro";
-import TalkCard from "@/components/bento/TalkCard.astro";
-import ArticlesCard from "@/components/bento/ArticlesCard.astro";
+import SEO from "@/components/SEO.astro";
+import Hero from "@/components/home/Hero.astro";
+import Tagline from "@/components/home/Tagline.astro";
+import AtWork from "@/components/home/AtWork.astro";
+import Talks from "@/components/home/Talks.astro";
+import Elsewhere from "@/components/home/Elsewhere.astro";
+import { SITE } from "@/lib/constants";
 ---
 
 <Layout>
-  <SEO slot="seo" title={`${SITE.name} — ${SITE.title}`} />
-  <main class="py-8 px-5 md:pt-24 md:pb-12 md:px-12 max-w-lg md:max-w-7xl mx-auto w-full">
-    <div class="flex flex-col gap-5 md:grid md:grid-cols-12 md:auto-rows-[minmax(160px,auto)] md:gap-6">
-      <IdentityCard />
-      <SocialsCard />
-      <ExperienceCard />
-      <TalkCard />
-      <ArticlesCard />
-    </div>
+  <SEO slot="seo" title={`${SITE.name}, ${SITE.title}`} />
+  <main class="min-h-screen px-6 py-20 md:py-28 flex flex-col items-center">
+    <article class="w-full max-w-md mx-auto">
+      <Hero delay={0} />
+      <Tagline delay={140} />
+      <AtWork delay={280} />
+      <Talks delay={420} />
+      <Elsewhere delay={560} />
+    </article>
   </main>
 </Layout>

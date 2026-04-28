@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import { SITE, LOCATION } from "@/lib/constants";
+import portrait from "@/assets/houssem-balti.png";
+
+interface Props {
+  delay?: number;
+}
+const { delay = 0 } = Astro.props;
+---
+
+<header
+  class="motion-safe:animate-rise flex items-center gap-5"
+  style={`animation-delay: ${delay}ms;`}
+>
+  <Image
+    src={portrait}
+    alt={`Portrait of ${SITE.name}`}
+    width={96}
+    height={96}
+    densities={[1, 2]}
+    loading="eager"
+    decoding="async"
+    class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover object-top shrink-0 border border-border ring-1 ring-primary/20 ring-offset-4 ring-offset-background"
+  />
+  <div class="min-w-0">
+    <h1 class="text-xl md:text-2xl font-semibold tracking-tight text-foreground leading-tight">
+      {SITE.name}<span class="text-primary font-medium">.dev</span>
+    </h1>
+    <p class="text-sm text-muted-foreground mt-1.5 leading-snug">
+      {SITE.title}
+    </p>
+    <p class="text-xs text-muted-foreground/80 mt-1.5 flex items-center gap-1.5">
+      <span class="relative inline-flex w-2 h-2 shrink-0" aria-hidden="true">
+        <span class="absolute inset-0 rounded-full bg-primary opacity-60 motion-safe:animate-pulse-out"></span>
+        <span class="relative inline-block w-2 h-2 rounded-full bg-primary"></span>
+      </span>
+      <span>{LOCATION.country}</span>
+    </p>
+  </div>
+</header>

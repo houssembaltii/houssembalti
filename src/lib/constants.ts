@@ -1,3 +1,6 @@
+import csLogo from "@/assets/cs-color-logotype.png";
+import forkitLogo from "@/assets/icon-background.svg";
+
 export const SITE = {
   name: "Houssem Balti",
   title: "Full Stack Developer",
@@ -26,7 +29,7 @@ export const EXPERIENCES = [
     org: "CamelStudio",
     href: "https://camelstudio.tech/",
     period: "Aug 2024 – Present",
-    logo: "/cs-color-logotype.png",
+    logo: csLogo,
     logoAlt: "CamelStudio",
   },
   {
@@ -34,7 +37,7 @@ export const EXPERIENCES = [
     org: "Active Volunteer",
     href: "https://www.forkit.community/",
     period: "2025 – Present",
-    logo: "/icon-background.svg",
+    logo: forkitLogo,
     logoAlt: "Fork It Community",
   },
 ] as const;
@@ -45,5 +48,10 @@ export const TALKS = [
     event: "Fork It Community Event",
     date: "January 2025",
     location: "Tunisia, Nabeul",
+    href: "https://www.forkit.community/events/2025-tunisia-nabeul",
   },
 ] as const;
+
+export const LOCATION = {
+  country: "Tunisia",
+} as const;
